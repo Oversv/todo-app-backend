@@ -34,21 +34,16 @@ app.get("/tasks", function(request, response){
 });
 
 app.post("/tasks", function(request, response){
-  const task = request.body;
-  //{text: "do the dishes", completed: true, date: "2019"}
-
-  response.status(201).send("Succesfully created task:" + task.text);
+  //INSERT
+  
 });
 
 app.delete("/tasks/:taskId", function (request, response) {
-  const taskId = request.params.taskId;
-  response.status(200).send("Deleted task with id " + taskId);
+  //DELETE
 });
 
 app.put("/tasks/:taskId", function (request, response) {
-  const taskId = request.params.taskId;
-  const updatedTask = request.body;
-  response.status(200).send("Updated task with id " + taskId);
+  //UPDATE
 });
 
 module.exports.tasks = serverlessHttp(app);

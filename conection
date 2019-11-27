@@ -5,3 +5,6 @@ const connection = mysql.createConnection({
   password: "CGXs9i8A8rBfk9fs7VQR",
   database: "todo_app"
 });
+
+serverless  deploy --DB_HOST "tr-course-rds-instance.c46szd3l10an.eu-west-2.rds.amazonaws.com" --DB_USER "root" --DB_PASSWORD "CGXs9i8A8rBfk9fs7VQR" 
+
