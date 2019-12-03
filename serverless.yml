@@ -27,5 +27,5 @@ functions:
           cors: true
       - http:
           path: tasks/{taskId}
-          method: put
-          cors: true
+          method: put          
+          cors: true    
