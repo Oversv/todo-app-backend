@@ -24,7 +24,7 @@ app.get("/tasks", function(request, response){
       
     } else response.status(200).json({task:data});    
   });
-  connection.end();
+  
 });
 
 app.post("/tasks", function(request, response){
@@ -54,7 +54,7 @@ app.post("/tasks", function(request, response){
     }    
   });
 
-  connection.end();  
+  
 });
 
 app.delete("/tasks/:taskId", function (request, response) {
@@ -72,7 +72,7 @@ app.delete("/tasks/:taskId", function (request, response) {
     } 
     
   });
-  connection.end();  
+   
 });
 
 app.put("/tasks/:taskId", function (request, response) {
@@ -93,7 +93,7 @@ app.put("/tasks/:taskId", function (request, response) {
     }
 
   });
-  connection.end();  
+  
 });
 
 module.exports.tasks = serverlessHttp(app);
