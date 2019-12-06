@@ -53,7 +53,6 @@ app.post("/tasks", function(request, response){
       });
     }    
   });
-
   
 });
 
@@ -69,7 +68,9 @@ app.delete("/tasks/:taskId", function (request, response) {
       response.status(500).json({
         error: err
       });
-    } 
+    } else {
+      response.status(200).json('Removal done');
+    }    
     
   });
    
@@ -90,7 +91,9 @@ app.put("/tasks/:taskId", function (request, response) {
       response.status(500).json({
         error: err
       });
-    }
+    } else {
+      response.status(200).json('Updated done');
+    } 
 
   });
   
