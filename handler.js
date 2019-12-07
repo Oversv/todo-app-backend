@@ -56,6 +56,7 @@ app.post("/tasks", function(request, response){
   
 });
 
+// In a later update I will update the security
 app.delete("/tasks/:taskId", function (request, response) {
   const taskId = request.params.taskId;
 
@@ -76,6 +77,7 @@ app.delete("/tasks/:taskId", function (request, response) {
    
 });
 
+// In a later update I will update the security
 app.put("/tasks/:taskId", function (request, response) {
   const taskId = request.params.taskId;
   const taskDescription = request.body.taskDescription;
@@ -98,5 +100,25 @@ app.put("/tasks/:taskId", function (request, response) {
   });
   
 });
+
+app.post("/deleteAll", function(request, response){
+
+  const sql = 'TRUNCATE TABLE task';
+
+  connection.query(sql, (err, results, fields) => {
+
+    if (err) {
+      console.log("Error deleting all tasks", err);
+      response.status(500).json({
+        error: err
+      });
+
+    } else {
+      response.status(201).json('All deleted data');
+    }    
+  });
+  
+});
+
 
 module.exports.tasks = serverlessHttp(app);

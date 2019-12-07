@@ -28,4 +28,8 @@ functions:
       - http:
           path: tasks/{taskId}
           method: put          
+          cors: true
+      - http:
+          path: deleteAll
+          method: post
           cors: true    
